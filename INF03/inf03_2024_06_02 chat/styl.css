@@ -1,0 +1,75 @@
+* {
+    font-family: Garamond;
+}
+
+header {
+    background-color: tomato;
+    color: white;
+    text-align: center;
+    width: 80%;
+    height: 80px;
+    float: left;
+}
+
+section {
+    width: 80%;
+    height: 600px;
+    float: left;
+}
+
+aside {
+    background-color: coral;
+    width: 20%;
+    height: 680px;
+    float: right;
+}
+
+footer {
+    background-color: tomato;
+    color: white;
+    text-align: center;
+    clear: both;
+}
+
+img {
+    border-radius: 50%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+article {
+    border: solid 1px tomato;
+    margin: 15px;
+    height: 470px;
+    overflow: scroll;
+}
+
+div {
+    border-radius: 5px;
+    width: 90%;
+    height: 70px;
+    margin: 2%;
+    padding: 3px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.wypowiedz-jolki {
+    background-color: #EEE;
+}
+
+.wypowiedz-krzyska {
+    background-color: #CCC;
+    flex-direction: row-reverse;
+}
+
+button {
+    background-color: tomato;
+    border: solid 1px darkred;
+    padding: 5px;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 500px;
+}

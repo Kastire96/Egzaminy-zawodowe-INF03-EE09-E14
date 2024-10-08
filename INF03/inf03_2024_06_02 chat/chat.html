@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <header>
+        <h2>Chat</h2>
+    </header>
+    <main>
+        <aside>
+            <h3>
+                Chaty
+            </h3>
+            <ul>
+                <li>Ogólny</li>
+                <li>Tematyczne
+                    <ol>
+                        <li>Turystyczny</li>
+                        <li>Żeglarski</li>
+                        <li>Filatelistyczny</li>
+                        <li>Hodowla zwierzątek domowych</li>
+                    </ol>
+                </li>
+            </ul>
+            <h3>Uczestnicy</h3>
+            <p>Jolanta Nowak</p>
+            <img src="Jolka.jpg" alt="Jolanta Nowak">
+            <p>Krzysztof Łukasiński</p>
+            <img src="Krzysiek.jpg" alt="Krzysztof Łukasiński">
+        </aside>
+        <section>
+            <article>
+                <div class="wypowiedz-jolki">
+                    <img src="Jolka.jpg" alt="Jolanta Nowak">
+                    <p>Cześć idziesz jutro do kina?</p>
+                </div>
+                <div class="wypowiedz-krzyska">
+                    <img src="Krzysiek.jpg" alt="Krzysztof Łukasiński">
+                    <p>Tak! A ty?</p>
+                </div>
+            </article>
+                Wpisz wiadomość: <input type="text" name="wiadomosc" id="wiadomosc"> <button id="wyslij-jolka">Wyślij</button><br>
+                <button id="wyslij-krzysiek">Generuj losową odpowiedź</button>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <h5>Chat wykonał: 000000000</h5>
+    </footer>
+    <script>
+        function wyslij() {
+            const wiadomosc = document.getElementById("wiadomosc").value
+            const chat = document.querySelector("article")
+            const nowaWiadomosc = `<div class="wypowiedz-jolki">
+                                    <img src="Jolka.jpg" alt="Jolanta Nowak">
+                                    <p>${wiadomosc}</p>
+                                </div>`
+            chat.innerHTML += nowaWiadomosc
+
+            chat.scrollTop = chat.scrollHeight
+        }
+
+        function generujWiadomosc() {
+            const odpowiedzi = [
+                "Świetnie!",
+                "Kto gra główną rolę?",
+                "Lubisz filmy Tego reżysera?",
+                "Będę 10 minut wcześniej",
+                "Może kupimy sobie popcorn?",
+                "Ja wolę Colę",
+                "Zaproszę jeszcze Grześka",
+                "Tydzień temu też byłem w kinie na Diunie",
+                "Ja funduję bilety"
+            ]
+
+            const losowyIndex = Math.floor(Math.random() * odpowiedzi.length)
+            const losowaOdpowiedz = odpowiedzi[losowyIndex]
+            const chat = document.querySelector("article")
+            
+            const nowaWiadomosc = `<div class="wypowiedz-krzyska">
+                                    <img src="Krzysiek.jpg" alt="Krzysztof Łukasiński">
+                                    <p>${losowaOdpowiedz}</p>
+                                </div>`
+            
+            chat.innerHTML += nowaWiadomosc
+            chat.scrollTop = chat.scrollHeight
+        }
+
+        const wyslijJolka = document.getElementById("wyslij-jolka")
+        wyslijJolka.addEventListener("click", wyslij)
+
+        const wyslijKrzysiek = document.getElementById("wyslij-krzysiek")
+        wyslijKrzysiek.addEventListener("click", generujWiadomosc)
+    </script>
+</body>
+</html>
