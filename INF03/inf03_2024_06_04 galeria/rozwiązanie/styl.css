@@ -12,13 +12,15 @@ header, footer {
 aside {
     background-color: navajowhite;
     width: 15%;
-    height: 700px; float: left;
+    height: 700px; 
+    float: left;
 }
 
 section {
     width: 70%;
     height: 700px;
-    overflow: scroll; float: left;
+    overflow: scroll; 
+    float: left;
 }
 
 img {
