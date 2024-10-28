@@ -63,7 +63,7 @@
                         $wynik = mysqli_query($polaczenie, $zapytanie);
 
                         while ($wiersz = mysqli_fetch_array($wynik)) {
-                            echo "<option>$wiersz[0]";
+                            echo "<option>$wiersz[0]</option>";
                         }
 
                         mysqli_close($polaczenie);
@@ -96,7 +96,7 @@
     </main>
     <footer>
         <p>Stronę wykonał: 000000000</p>
-        <a href="http://firmy.pl/komis">Znajdź nas także</a>
+        <a href="http://firmy.pl/komis"><p>Znajdź nas także</p></a>
     </footer>
 </body>
 </html>
