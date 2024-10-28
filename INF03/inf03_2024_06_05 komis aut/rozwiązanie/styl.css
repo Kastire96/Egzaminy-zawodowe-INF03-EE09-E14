@@ -1,0 +1,58 @@
+* {
+    font-family: serif;
+}
+
+header {
+    background-color: crimson;
+    color: white;
+    text-align: center;
+    word-spacing: 30px;
+    padding: 10px;
+}
+
+#blok1 {
+    background-color: mistyrose;
+    height: 300px;
+    padding: 10px;
+    margin: 10px 50px;
+    border: solid 1px crimson;
+}
+
+#blok1 img {
+   float: left;
+   height: 100%; 
+}
+
+article {
+    background-color: snow;
+    height: 450px;
+    width: 21%;
+    margin: 1%;
+    text-align: center;
+    border: solid 1px crimson;
+    float: left;
+}
+
+footer {
+    background-color: crimson;
+    color: white;
+    clear: both;
+}
+
+img {
+    max-width: 100%;
+}
+
+h4 {
+    font-size: 180%;
+    text-align: center;
+    color: crimson;
+}
+
+a {
+    color: white;
+}
+
+#blok3 {
+    clear: both;
+}
