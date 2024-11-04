@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biuro turystyczne</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <header>
+        <h1>Zwiedzamy Polskę</h1>
+    </header>
+    <main>
+        <aside>
+            <button id="poprzednie">&lt;</button>
+        </aside>
+        <section id="srodek">
+            <img src="1.jpg" alt="Aktywne zdjęcie">
+        </section>
+        <aside>
+            <button id="nastepne">&gt;</button>
+        </aside>
+        <section id="miniatury">
+            <img src="1.jpg" alt="Gdańsk">
+            <img src="2.jpg" alt="Kraków">
+            <img src="3.jpg" alt="Niedzica">
+            <img src="4.jpg" alt="Pieniny">
+            <img src="5.jpg" alt="Szklarska Poręba">
+            <img src="6.jpg" alt="Tatry">
+            <img src="7.jpg" alt="Wrocław">
+        </section>
+    </main>
+    <footer>
+        <h3>Autorem galerii jest:</h3>
+        <p>07231204470</p>
+        <a href="http://pixabay.com" target="_blank">Więcej zdjęć</a>
+    </footer>
+    <script>
+        let licznikZdjec = 1
+
+        const srodek = document.getElementById("srodek")
+
+        function nastepne() {
+            licznikZdjec ++
+
+            if (licznikZdjec < 8) {
+                srodek.innerHTML = `<img src="${licznikZdjec}.jpg" alt="Aktywne zdjęcie">`
+            }
+            else {
+                licznikZdjec = 1;
+                srodek.innerHTML = `<img src="${licznikZdjec}.jpg" alt="Aktywne zdjęcie">`
+            }
+        }
+
+        function poprzednie() {
+            licznikZdjec --
+
+            if (licznikZdjec > 0) {
+                srodek.innerHTML = `<img src="${licznikZdjec}.jpg" alt="Aktywne zdjęcie">`
+            }
+            else {
+                licznikZdjec = 7;
+                srodek.innerHTML = `<img src="${licznikZdjec}.jpg" alt="Aktywne zdjęcie">`
+            }
+        }
+
+        document.getElementById("nastepne").addEventListener("click", nastepne)
+        document.getElementById("poprzednie").addEventListener("click", poprzednie)
+    </script>
+</body>
+</html>

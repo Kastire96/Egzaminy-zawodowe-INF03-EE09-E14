@@ -1,0 +1,79 @@
+* {
+    font-family: Georgia;
+    color: white;
+}
+
+header, footer {
+    background-color: maroon;
+    text-align: center;
+    padding: 2px;
+}
+
+aside, #srodek {
+    background-color: LightSalmon;
+    height: 527px;
+    float: left;
+}
+
+aside {
+    width: 15%;
+}
+
+#srodek {
+    width: 70%;
+}
+
+#miniatury {
+    background-color: maroon;
+    height: 70px;
+    clear: both;
+}
+
+button {
+    background-color: lightsalmon;
+    color: maroon;
+    border: none;
+    font-size: 400%;
+    display: block;
+    margin: auto;
+    padding-top: 210px;
+}
+
+#miniatury img {
+    height: 70px;
+    animation-duration: 4s;
+    animation-name: miniatury;
+}
+
+@keyframes miniatury {
+    from {
+        padding-left: 50px;
+    }
+
+    to {
+        padding-left: 0;
+    }
+}
+
+#srodek img {
+    display: block;
+    margin: auto;
+    padding-top: 45px;
+}
+
+#srodek img:hover {
+    scale: 120%;
+    animation-duration: 5s;
+    animation-name: srodek;
+}
+
+@keyframes srodek {
+    from {
+        scale: 100%;
+    }
+
+    to {
+        scale: 120%;
+    }
+}
+
