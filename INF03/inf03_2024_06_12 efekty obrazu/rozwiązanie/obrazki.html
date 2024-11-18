@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efekty obrazu</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <header>
+        <h2>Efekty na obrazach</h2>
+    </header>
+
+    <main>
+        <section>
+            <img src="pszczola.jpg" alt="pszczoła na fioletowym kwiatku" id="obraz1"><br>
+            <input type="radio" name="efekty" id="blur" value="blur">Blur<br>
+            <input type="radio" name="efekty" id="sepia" value="sepia">Sepia<br>
+            <input type="radio" name="efekty" id="negatyw" value="negatyw">Negatyw<br>
+            <button onclick="transf1()">Zastosuj</button>
+        </section>
+
+        <section>
+            <img src="pomarancza.jpg" alt="drzewo pomarańczy" id="obraz2"><br>
+            <button onclick="transf2Color()">Kolorowy</button>
+            <button onclick="transf2Gray()">Czarno-biały</button>
+        </section>
+
+        <section>
+            <img src="owoce.jpg" alt="Kosz pełen owoców" id="obraz3"><br>
+            <input type="range" name="range1" id="range1" min="0" max="100" value="100"><br>
+            <button onclick="transf3()">Zastosuj</button>
+        </section>
+
+        <section>
+            <img src="zolw.jpg" alt="Żółw w wodzie" id="obraz4"><br>
+            <input type="range" name="range2" id="range2" min="0" max="250"><br>
+            <button onclick="transf4()">Zastosuj</button>
+        </section>
+    </main>
+
+    <footer>
+        <p><a href="http://www.css.com/" target="_blank">Zobacz inne efekty obrazu</a></p>
+        <p>Stronę wykonał: 00000000000</p>
+    </footer>
+
+    <script>
+        function transf1() {
+            const obraz = document.getElementById("obraz1")
+            const wybranyFiltr = document.querySelector("input[name='efekty']:checked")
+
+            if (wybranyFiltr) {
+                switch (wybranyFiltr.value) {
+                    case "blur":
+                        obraz.style.filter = "blur(5px)"
+                        break
+
+                    case "sepia":
+                        obraz.style.filter = "sepia(100%)"
+                        break
+
+                    case "negatyw":
+                        obraz.style.filter = "invert(100%)"
+                        break
+                
+                    default:
+                        break
+                }
+            }
+        }
+
+        function transf2Color() {
+            const obraz = document.getElementById("obraz2")
+
+            obraz.style.filter = "none"
+        }
+
+        function transf2Gray() {
+            const obraz = document.getElementById("obraz2")
+
+            obraz.style.filter = "grayscale(100%)"
+        }
+
+        function transf3() {
+            const obraz = document.getElementById("obraz3")
+            const wartosc = document.getElementById("range1").value
+
+            obraz.style.filter = `opacity(${wartosc}%)`
+        }
+
+        function transf4() {
+            const obraz = document.getElementById("obraz4")
+            const wartosc = document.getElementById("range2").value
+
+            obraz.style.filter = `brightness(${wartosc}%)`
+        }
+    </script>
+</body>
+</html>
