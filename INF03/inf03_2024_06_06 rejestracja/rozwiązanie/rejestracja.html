@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rejestracja</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+   <header>
+        <h1>Formularz rejestracyjny konferencji <em>Nasze Kwiaty</em></h1>
+   </header> 
+
+   <main>
+        <form>
+            <section id="blok1">
+                <h2>Dane osobowe</h2>
+                <input type="text" name="imie" id="imie" placeholder="Wpisz imię..." required><br>
+                <input type="text" name="nazwisko" id="nazwisko" placeholder="Wpisz nazwisko" required><br>
+                <input type="button" value="Następna karta" onclick="przycisk1()">
+            </section>
+
+            <section id="blok2">
+                <h2>Dane kontaktowe</h2>
+                <input type="email" name="email" id="email" placeholder="Twój e-mail..."><br>
+                <input type="tel" name="numer" id="numer" placeholder="Twój numer telefonu..."><br>
+                <input type="button" value="Nastepna karta" onclick="przycisk2()">
+            </section>
+
+            <section id="blok3">
+                <h2>Hasło do logowania</h2>
+                <input type="password" name="password" id="password" placeholder="Podaj hasło"><br>
+                <input type="password" name="password2" id="password2" placeholder="Powtórz hasło"><br>
+                <input type="button" value="Zatwierdź" onclick="przycisk3()">
+            </section>
+        </form>
+   </main>
+
+   <footer>
+        <video src="motyl.mp4" controls>
+            Przeglądarka nie obsługuje tego formatu
+        </video>
+   </footer>
+
+   <footer>
+        <h3>Plan konferencji</h3>
+        <table>
+            <tr>
+                <td>9:00 - 12:00</td>
+                <td>Pielęgnacja roślin</td>
+            </tr>
+            <tr>
+                <td>13:00 - 15:00</td>
+                <td>Targi kwiatowe</td>
+            </tr>
+        </table>
+   </footer>
+
+   <footer>
+        <p><a href="https://kwiaty.pl/">Internetowa kwiaciarnia</a></p>
+   </footer>
+
+   <footer>
+        <p>Formularz wykonał: 00000000000</p>
+   </footer>
+
+   <script>
+        function przycisk1() {
+            document.getElementById("blok1").style.opacity = 0
+            document.getElementById("blok2").style.opacity = 1
+        }
+
+        function przycisk2() {
+            document.getElementById("blok2").style.opacity = 0
+            document.getElementById("blok3").style.opacity = 1
+        }
+
+        function przycisk3() {
+            const haslo = document.getElementById("password").value
+            const powtHaslo = document.getElementById("password2").value
+            const imie = document.getElementById("imie").value
+            const nazwisko = document.getElementById("nazwisko").value
+
+            if (haslo != powtHaslo) {
+                alert("Podane hasła róźnią się")
+            } else {
+                console.log(`Witaj ${imie} ${nazwisko}`)
+            }
+        }
+   </script>
+</body>
+</html>
