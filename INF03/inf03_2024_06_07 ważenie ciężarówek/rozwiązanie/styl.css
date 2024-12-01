@@ -1,0 +1,58 @@
+* {
+    font-family: Tahoma;
+}
+
+header {
+    background-color: #519657;
+    color: white;
+    text-align: center;
+    height: 150px;
+    width: 70%;
+    float: left;
+}
+
+header:last-of-type {
+    width: 30%;
+}
+
+aside, section {
+    background-color: #E1E1E1;
+    height: 450px;
+    float: left;
+}
+
+aside {
+    width: 25%;
+}
+
+section {
+    width: 50%;
+    overflow: auto;
+}
+
+footer {
+    background-color: #80C683;
+    text-align: center;
+    clear: both;
+}
+
+img[src="obraz2.jpg"] {
+    width: 100%;
+    padding: 100px 0;
+}
+
+table {
+    border: solid 1px #80C683;
+}
+
+th, td {
+    padding: 2px;
+}
+
+tr:hover {
+    background-color: #80C683;
+}
+
+tr:last-of-type {
+    background-color: red;
+}
