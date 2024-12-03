@@ -1,0 +1,80 @@
+* {
+    font-family: Cambria;
+}
+
+body {
+    background-color: linen;
+}
+
+aside, header, footer {
+    background-color: steelblue;
+    color: white;
+    text-align: center;
+}
+
+aside {
+    width: 25%;
+    height: 510px;
+    margin: 0 1%;
+    box-shadow: 4px 4px 5px dimgray;
+    float: left;
+}
+
+header {
+    width: 73%;
+    height: 80px;
+    float: left;
+}
+
+#główny{
+    width: 73%;
+    height: 400px;
+    float: left;
+}
+
+button {
+    background-color: steelblue;
+    color: white;
+    width: 20%;
+    padding: 15px;
+    margin-top: 30px;
+    font-size: 130%;
+    border: none;
+}
+
+button:hover {
+    background-color: navy;
+}
+
+article {
+    background-color: lightblue;
+    margin-right: 80px;
+    padding: 10px;
+    display: none;
+}
+
+#klient {
+    display: block;
+}
+
+#pasekG {
+    background-color: lightgrey;
+    width: 73%;
+    margin-bottom: 10px;
+    float: left;
+}
+
+#pasek {
+    background-color: navy;
+    width: 4%;
+    height: 30px;
+}
+
+table {
+    width: 100%;
+    border: dotted 1px navy;
+}
+
+footer {
+    clear: both;
+}

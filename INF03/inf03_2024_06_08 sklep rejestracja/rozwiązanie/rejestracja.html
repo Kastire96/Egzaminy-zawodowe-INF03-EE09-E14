@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sklep - rejestracja</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <aside>
+        <img src="obraz.png" alt="promocje">
+        <h2>Sprawdź promocje</h2>
+        <table>
+            <tr>
+                <th>co?</th>
+                <th>ile taniej?</th>
+            </tr>
+            <tr>
+                <td>ubrania</td>
+                <td>15%</td>
+            </tr>
+            <tr>
+                <td>buty</td>
+                <td>25%</td>
+            </tr>
+        </table>
+    </aside>
+    <header>
+        <h1>Zarejestruj się w sklepie</h1>
+    </header>
+    <main>
+        <section id="główny">
+            <button id="klientBtn" onclick="aktywuj('klient')">Klient</button>
+            <button id="adresBtn" onclick="aktywuj('adres')">Adres</button>
+            <button id="kontaktBtn" onclick="aktywuj('kontakt')">Kontakt</button>
+            <article id="klient">
+                <p>Imię</p>
+                <input type="text" name="imie" id="imie" placeholder="Wpisz dane..." onfocusout="wartoscPaska()">
+                <p>Nazwisko</p>
+                <input type="text" name="nazwisko" id="nazwisko" onfocusout="wartoscPaska()">
+                <p>Data urodzenia</p>
+                <input type="date" name="data" id="data" onfocusout="wartoscPaska()">
+            </article>
+            <article id="adres">
+                <p>Ulica</p>
+                <input type="text" name="ulica" id="ulica" onfocusout="wartoscPaska()">
+                <p>Numer</p>
+                <input type="number" name="numer" id="numer" onfocusout="wartoscPaska()">
+                <p>Miasto</p>
+                <input type="text" name="miasto" id="miasto" onfocusout="wartoscPaska()">
+            </article>
+            <article id="kontakt">
+                <p>Numer komórkowy</p>
+                <input type="tel" name="numerTel" id="numerTel" onfocusout="wartoscPaska()"><br>
+                <input type="checkbox" name="rodo" id="rodo">Akceptuję RODO<br>
+                <button onclick="zatwierdz()">Zatwierdź dane</button>
+            </article>
+        </section>
+        <section id="pasekG">
+            <section id="pasek"></section>
+        </section>
+    </main>
+    <footer>
+        <h4>Rejestrację do sklepu wykonał: 00000000000</h4>
+    </footer>
+    
+    <script>
+        function aktywuj(blokNazwa) {
+
+            const blok = document.getElementById(blokNazwa)
+
+            const klient = document.getElementById("klient")
+            const adres = document.getElementById("adres")
+            const kontakt = document.getElementById("kontakt")
+
+            if (blokNazwa == "klient") {
+                blok.style.display = "block"
+                adres.style.display = "none"
+                kontakt.style.display = "none"
+            }
+            if (blokNazwa == "adres") {
+                blok.style.display = "block"
+                klient.style.display = "none"
+                kontakt.style.display = "none"
+            }
+            if (blokNazwa == "kontakt") {
+                blok.style.display = "block"
+                klient.style.display = "none"
+                adres.style.display = "none"
+            }
+        }
+
+        let szerokosc = 4
+
+        function wartoscPaska() {
+            if (szerokosc < 100) {
+                szerokosc += 12
+            }
+
+            const pasek = document.getElementById("pasek")
+
+            pasek.style.width = `${szerokosc}%`
+        }
+
+        function zatwierdz() {
+            const imie = document.getElementById("imie").value
+            const nazwisko = document.getElementById("nazwisko").value
+            const data = document.getElementById("data").value
+            const ulica = document.getElementById("ulica").value
+            const numer = document.getElementById("numer").value
+            const miasto = document.getElementById("miasto").value
+            const numerTel = document.getElementById("numerTel").value
+            const rodo = document.getElementById("rodo").checked ? "on" : "off"
+
+            console.log(`${imie}, ${nazwisko}, ${data}, ${ulica}, ${numer}, ${miasto}, ${numerTel}, ${rodo},`)
+        }
+    </script>
+</body>
+</html>
