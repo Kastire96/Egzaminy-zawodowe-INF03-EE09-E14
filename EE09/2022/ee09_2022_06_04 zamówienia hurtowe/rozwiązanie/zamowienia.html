@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zamówienia hurtowe</title>
+    <link rel="stylesheet" href="styl4.css">
+</head>
+<body>
+    <header>
+        <h1>Sieci komputerowe</h1>
+    </header>
+    <main>
+        <aside id="blok-lewy">
+            <h2>Aktualizacja i zamówienia materiałów</h2>
+            <p>Do wewnętrznego użytku firmy</p>
+            <img src="obraz.png" alt="sieć komputerowa">
+        </aside>
+        <aside id="blok-prawy">
+            <table>
+                <tr>
+                    <th>Produkt</th>
+                    <th>Jednostka</th>
+                    <th>Dostępna ilość</th>
+                    <th>Aktualizacja</th>
+                    <th>Zamówienie</th>
+                </tr>
+                <tr>
+                    <td id="nazwaProduktu1">Skrętka U/UTP drut</td>
+                    <td>metr</td>
+                    <td class="liczbaProduktow" id="komorka1">20</td>
+                    <td>
+                        <button onclick="aktualizuj(document.getElementById('komorka1'))">Aktualizuj</button>
+                    </td>
+                    <td>
+                        <button onclick="zamow(document.getElementById('nazwaProduktu1').textContent)">Zamów</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="nazwaProduktu2">Skrętka U/UTP linka</td>
+                    <td>metr</td>
+                    <td class="liczbaProduktow" id="komorka2">2</td>
+                    <td>
+                        <button onclick="aktualizuj(document.getElementById('komorka2'))">Aktualizuj</button>
+                    </td>
+                    <td>
+                        <button onclick="zamow(document.getElementById('nazwaProduktu2').textContent)">Zamów</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="nazwaProduktu3">Wtyki 8P8C</td>
+                    <td>sztuki</td>
+                    <td class="liczbaProduktow" id="komorka3">10</td>
+                    <td>
+                        <button onclick="aktualizuj(document.getElementById('komorka3'))">Aktualizuj</button>
+                    </td>
+                    <td>
+                        <button onclick="zamow(document.getElementById('nazwaProduktu3').textContent)">Zamów</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="nazwaProduktu4">Moduły Keystone</td>
+                    <td>sztuki</td>
+                    <td class="liczbaProduktow" id="komorka4">30</td>
+                    <td>
+                        <button onclick="aktualizuj(document.getElementById('komorka4'))">Aktualizuj</button>
+                    </td>
+                    <td>
+                        <button onclick="zamow(document.getElementById('nazwaProduktu4').textContent)">Zamów</button>
+                    </td>
+                </tr>
+            </table>
+        </aside>
+    </main>
+    <footer>
+        <a href="http://sieci.pl/">Nasza strona internetowa</a>
+        <p>Stronę przygotował: 00000000000</p>
+    </footer>
+
+    <script>
+        let idZamowienia = 0
+
+        function zaznaczBraki() {
+            const komorki = document.querySelectorAll('.liczbaProduktow')
+
+            for (let i = 0; i < komorki.length; i++) {
+                const komorka = komorki[i];
+                const ilosc = parseInt(komorka.textContent)
+
+                if (ilosc == 0) {
+                    komorka.style.backgroundColor = 'red'
+                }
+                else if (ilosc >= 1 && ilosc <= 5) {
+                    komorka.style.backgroundColor = "yellow"
+                }
+                else {
+                    komorka.style.backgroundColor = "honeydew"
+                }
+            }
+        }
+
+        zaznaczBraki()
+
+        function aktualizuj(komorka) {
+            const nowaIlosc = prompt("Podaj nową ilość:")
+            komorka.innerHTML = nowaIlosc
+            zaznaczBraki()
+        }
+
+        function zamow(nazwaProduktu) {
+            idZamowienia ++
+            alert(`Zamówienie nr: ${idZamowienia} Produkt: ${nazwaProduktu}`)
+        }
+    </script>
+</body>
+</html>
